@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+/*
+ * JavaScript Templates Demo
+ * https://github.com/blueimp/JavaScript-Templates
+ *
+ * Copyright 2011, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ */
+-->
+<html lang="en">
+    <head>
+        <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <![endif]-->
+        <meta charset="utf-8" />
+        <title>IVEE Dashboard Responsive Demo</title>
+    </head>
+    <body>
+        <h1>IVEE Dashboard Responsive Demo</h1>
+        <p>You have only to copy & paste the script content in your page</p>
+        <div id="dashboard"></div>
+        <script>
+          let content;
+          if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+          ){
+            // If mobile, then we do all this
+            console.log("I'm mobile");
+            content = '<iframe title="Mobile Mock Up" style="position: absolute; width: 100%; height: 100%; border: none" src="https://app.powerbi.com/reportEmbed?reportId=f829cac0-fa3a-4cd7-ac86-be9d18559763&autoAuth=true&ctid=b3a986c9-0ef0-4c81-aad9-3d74167b5c13&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWNlbnRyYWwtYi1wcmltYXJ5LXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameBorder="0" allowFullScreen="true"></iframe>';
+          }
+          else {
+            // If not mobile then do this
+            console.log("I am not mobile");
+            content = '<iframe title="Mockup v6" style="position: absolute; width: 100%; height: 100%; border: none"  src="https://app.powerbi.com/reportEmbed?reportId=0526adba-86ad-491b-992b-04928c482d12&autoAuth=true&ctid=b3a986c9-0ef0-4c81-aad9-3d74167b5c13&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWNlbnRyYWwtYi1wcmltYXJ5LXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameBorder="0" allowFullScreen="true"></iframe>';
+          }
+          document.getElementById("dashboard").innerHTML = content;
+        </script>
+    </body>
+</html>
