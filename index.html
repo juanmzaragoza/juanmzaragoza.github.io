@@ -20,29 +20,73 @@
         <title>IVEE Dashboard Responsive Demo</title>
     </head>
     <body>
-        <h1>IVEE Dashboard Responsive Demo</h1>
-        <p>You have only to copy & paste the script content in your page</p>
-        <div id="dashboard"></div>
-        <script>
-          let content;
-          if( navigator.userAgent.match(/Android/i)
-            || navigator.userAgent.match(/webOS/i)
-            || navigator.userAgent.match(/iPhone/i)
-            || navigator.userAgent.match(/iPad/i)
-            || navigator.userAgent.match(/iPod/i)
-            || navigator.userAgent.match(/BlackBerry/i)
-            || navigator.userAgent.match(/Windows Phone/i)
-          ){
-            // If mobile, then we do all this
-            console.log("I'm mobile");
-            content = '<iframe title="Mobile Mock Up" style="position: absolute; width: 100%; height: 100%; border: none" src="https://app.powerbi.com/view?r=eyJrIjoiOWRmMzFjZjEtOWQ1OC00OWYyLTkwNzgtOWI3ZDRiYzZlYWNjIiwidCI6ImIzYTk4NmM5LTBlZjAtNGM4MS1hYWQ5LTNkNzQxNjdiNWMxMyJ9" frameBorder="0" allowFullScreen="true"></iframe>';
-          }
-          else {
-            // If not mobile then do this
-            console.log("I am not mobile");
-            content = '<iframe title="Mockup v6" style="position: absolute; width: 100%; height: 100%; border: none"  src="https://app.powerbi.com/view?r=eyJrIjoiMmYyMDQ5YmItNDk4OC00OTc2LTk5MzEtNjAzN2MyNWNmMzlmIiwidCI6ImIzYTk4NmM5LTBlZjAtNGM4MS1hYWQ5LTNkNzQxNjdiNWMxMyJ9" frameBorder="0" allowFullScreen="true"></iframe>';
-          }
-          document.getElementById("dashboard").innerHTML = content;
+        <div class='tableauPlaceholder' id='viz1652982074680' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt='UsMapView ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pa&#47;Patients_16523787592140&#47;UsMapView&#47;1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz'  style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Patients_16523787592140&#47;UsMapView' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='no' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pa&#47;Patients_16523787592140&#47;UsMapView&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='showShareOptions' value='no'/>
+                <param name='language' value='es-ES' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1652982074680');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if ( divElement.offsetWidth > 800 ) {
+                vizElement.style.minWidth='1018px';
+                vizElement.style.maxWidth='1118px';
+                vizElement.style.width='100%';
+                vizElement.style.height='1362px';
+            } else if ( divElement.offsetWidth > 500 ) {
+                vizElement.style.minWidth='1018px';
+                vizElement.style.maxWidth='1118px';
+                vizElement.style.width='100%';
+                vizElement.style.height='1362px';
+            } else {
+                vizElement.style.width='100%';
+                vizElement.style.height='2827px';
+            }
+
+            var param = document.createElement("param");
+            param.name = "device";
+            if( navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)
+                )
+            {
+                // If mobile, then we do all this
+                console.log("I'm mobile");
+                param.value = "phone";
+            }
+            else
+            {
+                // If not mobile then do this
+                console.log("I am not mobile");
+                param.value = "desktop";
+            }
+            vizElement.appendChild(param);
+
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
     </body>
 </html>
